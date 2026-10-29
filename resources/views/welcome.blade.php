@@ -63,6 +63,13 @@
             >
                 Overzicht Leveranciers
             </a>
+            {{-- Kopje 2: user story 02 --}}
+            <a
+                href="{{ route('producten.index') }}"
+                class="inline-block px-6 py-3 bg-[#029ee2] hover:bg-[#0288c8] active:bg-[#0272a8] text-white text-sm font-semibold rounded-lg shadow-sm transition-colors"
+            >
+                Toevoegen producten
+            </a>
         </div>
         <div class="flex items-center justify-center w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">
             <main class="flex max-w-[335px] w-full flex-col-reverse lg:max-w-4xl lg:flex-row">

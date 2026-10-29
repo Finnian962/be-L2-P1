@@ -17,6 +17,9 @@
                     <a href="{{ route('leveranciers.index') }}" class="mt-6 ms-3 inline-block px-4 py-2 bg-[#029ee2] text-white rounded-md">
                         Naar Overzicht Leveranciers
                     </a>
+                    <a href="{{ route('producten.index') }}" class="mt-6 ms-3 inline-block px-4 py-2 bg-[#029ee2] text-white rounded-md">
+                        Naar Toevoegen producten
+                    </a>
                 </div>
             </div>
         </div>

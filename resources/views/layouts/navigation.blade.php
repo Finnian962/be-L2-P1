@@ -22,6 +22,10 @@
                     <x-nav-link :href="route('leveranciers.index')" :active="request()->routeIs('leveranciers.*')">
                         {{ __('1 Overzicht leveranciers') }}
                     </x-nav-link>
+                    {{-- Kopje 2: user story 02 --}}
+                    <x-nav-link :href="route('producten.index')" :active="request()->routeIs('producten.*', 'levering.*')">
+                        {{ __('2 Toevoegen producten') }}
+                    </x-nav-link>
                 </div>
             </div>
 
@@ -80,6 +84,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('leveranciers.index')" :active="request()->routeIs('leveranciers.*')">
                 {{ __('1 Overzicht leveranciers') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('producten.index')" :active="request()->routeIs('producten.*', 'levering.*')">
+                {{ __('2 Toevoegen producten') }}
             </x-responsive-nav-link>
         </div>
 
