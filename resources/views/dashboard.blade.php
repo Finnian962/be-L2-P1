@@ -12,7 +12,10 @@
                     <p>Ingelogd als <strong>{{ Auth::user()->name }}</strong></p>
                     <p class="mt-2">Uw rol: <span class="inline-block px-2 py-1 rounded-md bg-blue-100 text-blue-800 text-sm">{{ Auth::user()->Role }}</span></p>
                     <a href="{{ route('magazijn.index') }}" class="mt-6 inline-block px-4 py-2 bg-[#029ee2] text-white rounded-md">
-                        Naar Overzicht Magazijn Jamin
+                        Naar Overzicht producten Jamin
+                    </a>
+                    <a href="{{ route('leveranciers.index') }}" class="mt-6 ms-3 inline-block px-4 py-2 bg-[#029ee2] text-white rounded-md">
+                        Naar Overzicht Leveranciers
                     </a>
                 </div>
             </div>

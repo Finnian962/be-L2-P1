@@ -48,12 +48,20 @@
             @endif
         </header>
 
-        <div class="flex items-center justify-center w-full mb-6">
+        <div class="flex flex-wrap items-center justify-center gap-4 w-full mb-6">
+            {{-- Stap 1: link naar het scherm Overzicht producten Jamin --}}
             <a
                 href="{{ route('magazijn.index') }}"
                 class="inline-block px-6 py-3 bg-[#029ee2] hover:bg-[#0288c8] active:bg-[#0272a8] text-white text-sm font-semibold rounded-lg shadow-sm transition-colors"
             >
-                Overzicht Magazijn Jamin
+                Overzicht producten Jamin
+            </a>
+            {{-- Kopje 1: user story 01 --}}
+            <a
+                href="{{ route('leveranciers.index') }}"
+                class="inline-block px-6 py-3 bg-[#029ee2] hover:bg-[#0288c8] active:bg-[#0272a8] text-white text-sm font-semibold rounded-lg shadow-sm transition-colors"
+            >
+                Overzicht Leveranciers
             </a>
         </div>
         <div class="flex items-center justify-center w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">
