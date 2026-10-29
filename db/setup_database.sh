@@ -7,8 +7,30 @@
 #
 set -e
 
-MYSQL="${MYSQL:-mysql}"
 PROJECTMAP="$(cd "$(dirname "$0")/.." && pwd)"
+
+# MySQL-client zoeken: PATH, daarna XAMPP, MAMP en Homebrew
+if [ -z "$MYSQL" ]; then
+    MYSQL="$(command -v mysql || true)"
+    for KANDIDAAT in \
+        /Applications/XAMPP/xamppfiles/bin/mysql \
+        /Applications/MAMP/Library/bin/mysql/mysql \
+        /opt/homebrew/bin/mysql \
+        /usr/local/bin/mysql
+    do
+        if [ -z "$MYSQL" ] && [ -x "$KANDIDAAT" ]; then
+            MYSQL="$KANDIDAAT"
+        fi
+    done
+fi
+
+if [ -z "$MYSQL" ]; then
+    echo "Fout: geen mysql-client gevonden. Voer het script opnieuw uit met:"
+    echo "  MYSQL=/pad/naar/mysql bash db/setup_database.sh"
+    exit 1
+fi
+
+echo "==> MySQL: $MYSQL"
 
 echo "==> 1/4 Create-script uitvoeren (tabellen, relaties, data, stored procedures)"
 "$MYSQL" -u root < "$PROJECTMAP/db/create_script_Jamin.sql"
