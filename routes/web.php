@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\LeverancierController;
+use App\Http\Controllers\LeveringController;
 use App\Http\Controllers\MagazijnController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +23,11 @@ Route::middleware('auth')->group(function () {
     // User story 01: Overzicht leveranciers
     Route::get('/leveranciers', [LeverancierController::class, 'index'])->name('leveranciers.index');
     Route::get('/leveranciers/{leverancier}/producten', [LeverancierController::class, 'producten'])->name('leveranciers.producten');
+
+    // User story 02: Toevoegen producten
+    Route::get('/producten', [ProductController::class, 'index'])->name('producten.index');
+    Route::get('/levering/{leverancier}/{product}', [LeveringController::class, 'create'])->name('levering.create');
+    Route::post('/levering/{leverancier}/{product}', [LeveringController::class, 'store'])->name('levering.store');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
