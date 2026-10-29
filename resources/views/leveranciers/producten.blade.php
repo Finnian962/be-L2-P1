@@ -68,18 +68,12 @@
                                             </td>
                                             <td class="px-6 py-4 text-center">{{ $product->LaatsteLevering }}</td>
                                             <td class="px-6 py-4 text-center">
-                                                @if (Route::has('levering.create'))
-                                                    <a href="{{ route('levering.create', ['leverancier' => $leverancier->Id, 'product' => $product->ProductId]) }}"
-                                                       title="Nieuwe levering van {{ $product->ProductNaam }}">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
-                                                        </svg>
-                                                    </a>
-                                                @else
+                                                <a href="{{ route('levering.create', ['leverancier' => $leverancier->Id, 'product' => $product->ProductId]) }}"
+                                                   title="Nieuwe levering van {{ $product->ProductNaam }}">
                                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600 inline" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
                                                     </svg>
-                                                @endif
+                                                </a>
                                             </td>
                                         </tr>
                                     @endforeach
