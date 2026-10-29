@@ -16,23 +16,23 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                    {{-- Gegevens van de leverancier --}}
-                    <dl class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                        <div>
-                            <dt class="font-medium text-gray-500">Naam leverancier</dt>
-                            <dd>{{ $leverancier->Naam }}</dd>
+                    {{-- Wireframe-02 / Wireframe-03: gegevens van de leverancier, regel voor regel --}}
+                    <dl class="mb-6 space-y-1">
+                        <div class="flex">
+                            <dt class="w-44 shrink-0 font-medium text-gray-500">Naam leverancier</dt>
+                            <dd>: {{ $leverancier->Naam }}</dd>
                         </div>
-                        <div>
-                            <dt class="font-medium text-gray-500">Contactpersoon</dt>
-                            <dd>{{ $leverancier->ContactPersoon }}</dd>
+                        <div class="flex">
+                            <dt class="w-44 shrink-0 font-medium text-gray-500">Contactpersoon</dt>
+                            <dd>: {{ $leverancier->ContactPersoon }}</dd>
                         </div>
-                        <div>
-                            <dt class="font-medium text-gray-500">Leverancier nr</dt>
-                            <dd>{{ $leverancier->LeverancierNummer }}</dd>
+                        <div class="flex">
+                            <dt class="w-44 shrink-0 font-medium text-gray-500">Leverancier nr</dt>
+                            <dd>: {{ $leverancier->LeverancierNummer }}</dd>
                         </div>
-                        <div>
-                            <dt class="font-medium text-gray-500">Mobiel</dt>
-                            <dd>{{ $leverancier->Mobiel }}</dd>
+                        <div class="flex">
+                            <dt class="w-44 shrink-0 font-medium text-gray-500">Mobiel</dt>
+                            <dd>: {{ $leverancier->Mobiel }}</dd>
                         </div>
                     </dl>
 

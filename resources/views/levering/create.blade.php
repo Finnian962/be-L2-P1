@@ -29,23 +29,23 @@
                         </div>
                     @endif
 
-                    {{-- Wireframe-04: gegevens product en leverancier --}}
-                    <dl class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
-                        <div>
-                            <dt class="font-medium text-gray-500">Product</dt>
-                            <dd>{{ $product->Naam }}</dd>
+                    {{-- Wireframe-04: gegevens product en leverancier, regel voor regel --}}
+                    <dl class="mb-6 space-y-1">
+                        <div class="flex">
+                            <dt class="w-44 shrink-0 font-medium text-gray-500">Product</dt>
+                            <dd>: {{ $product->Naam }}</dd>
                         </div>
-                        <div>
-                            <dt class="font-medium text-gray-500">Leverancier</dt>
-                            <dd>{{ $leverancier->Naam }}</dd>
+                        <div class="flex">
+                            <dt class="w-44 shrink-0 font-medium text-gray-500">Leverancier</dt>
+                            <dd>: {{ $leverancier->Naam }}</dd>
                         </div>
-                        <div>
-                            <dt class="font-medium text-gray-500">Contactpersoon</dt>
-                            <dd>{{ $leverancier->ContactPersoon }}</dd>
+                        <div class="flex">
+                            <dt class="w-44 shrink-0 font-medium text-gray-500">Contactpersoon</dt>
+                            <dd>: {{ $leverancier->ContactPersoon }}</dd>
                         </div>
-                        <div>
-                            <dt class="font-medium text-gray-500">Mobiel</dt>
-                            <dd>{{ $leverancier->Mobiel }}</dd>
+                        <div class="flex">
+                            <dt class="w-44 shrink-0 font-medium text-gray-500">Mobiel</dt>
+                            <dd>: {{ $leverancier->Mobiel }}</dd>
                         </div>
                     </dl>
 
@@ -53,9 +53,10 @@
                           action="{{ route('levering.store', ['leverancier' => $leverancier->Id, 'product' => $product->Id]) }}">
                         @csrf
 
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label for="AantalProducteenheden" class="block font-medium text-gray-700 mb-1">
+                        {{-- Wireframe-04: label links, invoerveld rechts --}}
+                        <div class="mb-4 max-w-2xl">
+                            <div class="flex items-center gap-3">
+                                <label for="AantalProducteenheden" class="w-56 shrink-0 font-medium text-gray-700">
                                     Aantal producteenheden
                                 </label>
                                 <input
@@ -66,15 +67,17 @@
                                     max="65535"
                                     required
                                     value="{{ old('AantalProducteenheden', $invoer['AantalProducteenheden'] ?? '') }}"
-                                    class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+                                    class="w-56 rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                                 >
-                                @error('AantalProducteenheden')
-                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                                @enderror
                             </div>
+                            @error('AantalProducteenheden')
+                                <p class="mt-1 pl-[14.75rem] text-sm text-red-600">{{ $message }}</p>
+                            @enderror
+                        </div>
 
-                            <div>
-                                <label for="DatumEerstVolgendeLevering" class="block font-medium text-gray-700 mb-1">
+                        <div class="mb-6 max-w-2xl">
+                            <div class="flex items-center gap-3">
+                                <label for="DatumEerstVolgendeLevering" class="w-56 shrink-0 font-medium text-gray-700">
                                     Datum eerstvolgende levering
                                 </label>
                                 <input
@@ -83,12 +86,12 @@
                                     type="date"
                                     required
                                     value="{{ old('DatumEerstVolgendeLevering', $invoer['DatumEerstVolgendeLevering'] ?? '') }}"
-                                    class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
+                                    class="w-56 rounded-md border-gray-300 shadow-sm focus:border-blue-300 focus:ring focus:ring-blue-200 focus:ring-opacity-50"
                                 >
-                                @error('DatumEerstVolgendeLevering')
-                                    <p class="mt-1 text-sm text-red-600">{{ $message }}</p>
-                                @enderror
                             </div>
+                            @error('DatumEerstVolgendeLevering')
+                                <p class="mt-1 pl-[14.75rem] text-sm text-red-600">{{ $message }}</p>
+                            @enderror
                         </div>
 
                         <div class="flex flex-wrap justify-between gap-3">
